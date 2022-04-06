@@ -9,24 +9,48 @@ import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+    const [input, setInput] = useState({});
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("primary");
     const [btn_val, setbtn_val] = useState("Sign In");
     const navigate = useNavigate();
 
-    const handleLogin = async () => {
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
+    const handleInput = (e) => {
+        const { id, value } = e.target;
+        console.log(id, value);
+        switch (id) {
+            case "password":
+                setInput((prevState) => ({
+                    ...prevState,
+                    password: value,
+                }));
+                break;
+            case "username":
+                setInput((prevState) => ({
+                    ...prevState,
+                    username: value,
+                }));
+                break;
 
-        if (username === "" || password === "") {
-            console.log("NOPE");
+            default:
+                throw Error("DEFAULT WAS HIT IN SWITCH");
+                break;
+        }
+    };
+    const handleLogin = async () => {
+        // const username = document.getElementById("username").value;
+        // const password = document.getElementById("password").value;
+
+        if (input.username === null || input.passowrd === null) {
+            console.log(input.name, input.passowrd);
         } else {
+            console.log(input);
             try {
                 setLoading(true);
                 const user = await signInWithEmailAndPassword(
                     auth,
-                    username,
-                    password
+                    input.username,
+                    input.passowrd
                 );
                 setLoading(false);
                 navigate("../", { replace: true });
@@ -65,6 +89,7 @@ export default function Login() {
                         id='username'
                         label='Username'
                         variant='filled'
+                        onChange={handleInput}
                     />
                     <TextField
                         sx={{
@@ -76,6 +101,7 @@ export default function Login() {
                         label='Password'
                         variant='filled'
                         type='password'
+                        onChange={handleInput}
                     />
                     {loading ? (
                         <LoadingButton loading variant='outlined'>
