@@ -50,7 +50,7 @@ export default function Login() {
                 const user = await signInWithEmailAndPassword(
                     auth,
                     input.username,
-                    input.passowrd
+                    input.password
                 );
                 setLoading(false);
                 navigate("../", { replace: true });
