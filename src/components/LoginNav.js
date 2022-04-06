@@ -8,8 +8,6 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { auth } from "../firebase-config";
 import { signOut } from "firebase/auth";
@@ -17,21 +15,19 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../img/logo-white-nb.png";
 
 const pages = ["Clients", "Status", "Staff"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = (props) => {
     const navigate = useNavigate();
     // const [Sign, setSign] = React.useState(null);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const [avatar, setAvatar] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
+    // const handleOpenUserMenu = (event) => {
+    //     setAnchorElUser(event.currentTarget);
+    // };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);

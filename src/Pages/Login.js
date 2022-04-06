@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { Button, Box, Typography } from "@mui/material";
 import { auth } from "../firebase-config";
-import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -34,7 +34,6 @@ export default function Login() {
 
             default:
                 throw Error("DEFAULT WAS HIT IN SWITCH");
-                break;
         }
     };
     const handleLogin = async () => {
@@ -47,7 +46,7 @@ export default function Login() {
             console.log(input);
             try {
                 setLoading(true);
-                const user = await signInWithEmailAndPassword(
+                await signInWithEmailAndPassword(
                     auth,
                     input.username,
                     input.password
