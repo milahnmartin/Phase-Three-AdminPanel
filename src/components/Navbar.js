@@ -26,7 +26,6 @@ const Navbar = (props) => {
     // const [Sign, setSign] = React.useState(null);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const [avatar, setAvatar] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
         let clicked_view = event.currentTarget.innerText;

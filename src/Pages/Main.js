@@ -3,12 +3,9 @@ import Navbar from "../components/Navbar";
 import Staff from "../components/Staff";
 import Client from "../components/Client";
 import Status from "../components/Status";
-import Avatar from "@mui/material/Avatar";
-import { signOut } from "firebase/auth";
 import { auth } from "../firebase-config";
 import { Box, Typography } from "@mui/material";
-import { useSelector, useDispatch } from "react-redux";
-import { SetView } from "../actions";
+import { useSelector } from "react-redux";
 import "../App.css";
 
 function Main() {
