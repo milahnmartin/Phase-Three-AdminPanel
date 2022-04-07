@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../img/logo-white-nb.png";
 import { useDispatch } from "react-redux";
 import { SetView } from "../actions";
+import { click } from "@testing-library/user-event/dist/click";
 const pages = ["Clients", "Status", "Staff"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -30,7 +31,6 @@ const Navbar = (props) => {
     const handleOpenNavMenu = (event) => {
         let clicked_view = event.currentTarget.innerText;
         setAnchorElNav(event.currentTarget);
-        console.log(clicked_view.toUpperCase());
         dispatch(SetView(clicked_view.toUpperCase()));
     };
     const handleOpenUserMenu = (event) => {
@@ -40,7 +40,6 @@ const Navbar = (props) => {
     const handleCloseNavMenu = (event) => {
         let clicked_view = event.currentTarget.innerText;
         setAnchorElNav(null);
-        console.log(clicked_view.toUpperCase());
         dispatch(SetView(clicked_view.toUpperCase()));
     };
 
@@ -51,13 +50,13 @@ const Navbar = (props) => {
                 navigate("../login", { replace: true });
                 break;
             case "Profile":
-                navigate("../", { replace: true });
+                dispatch(SetView(e.target.innerText?.toUpperCase()));
                 break;
             case "Account":
-                navigate("../", { replace: true });
+                dispatch(SetView(e.target.innerText?.toUpperCase()));
                 break;
             case "Dashboard":
-                navigate("../", { replace: true });
+                dispatch(SetView(e.target.innerText?.toUpperCase()));
                 break;
             default:
                 console.log("DEFAULT");

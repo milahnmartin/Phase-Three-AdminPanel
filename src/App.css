@@ -22,9 +22,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 40px;
-    background-color: grey;
-    border: 3px solid #1976d2;
+    border-radius: 16px;
+    background: linear-gradient(315deg, #dddddd, #ffffff);
+    box-shadow: -5px -5px 71px #c6c6c6, 5px 5px 71px #ffffff;
 }
 
 .phase-login-container {
@@ -32,8 +32,7 @@
     justify-content: center;
     align-items: center;
     height: 87vh;
-    background: url("./img/banner.jpg");
-    background-size: cover;
+    background-color: white;
 }
 
 .login-container {

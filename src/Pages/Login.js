@@ -33,7 +33,10 @@ export default function Login() {
                 break;
 
             default:
-                throw Error("DEFAULT WAS HIT IN SWITCH");
+                setInput((prevState) => ({
+                    ...prevState,
+                }));
+                break;
         }
     };
     const handleLogin = async () => {
@@ -76,13 +79,12 @@ export default function Login() {
 
     return (
         <div className='login-container'>
-            <LoginNav />
+            <LoginNav title='Phase Three Trading Admin Login' />
             <div className='phase-login-container'>
                 <div className='admin-auth'>
                     <TextField
                         sx={{
                             marginBottom: "20px",
-                            color: "white",
                         }}
                         className='input'
                         id='username'
@@ -104,7 +106,7 @@ export default function Login() {
                     />
                     {loading ? (
                         <LoadingButton loading variant='outlined'>
-                            Submit
+                            LOADING
                         </LoadingButton>
                     ) : (
                         <Button
