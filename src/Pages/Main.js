@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Staff from "../components/Staff";
 import Client from "../components/Client";
 import Status from "../components/Status";
+import Profile from "../components/Profile";
 import { auth } from "../firebase-config";
 import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
@@ -42,6 +43,9 @@ function Main() {
 
             case "STATUS":
                 return <Status />;
+
+            case "PROFILE":
+                return <Profile />;
 
             default:
                 return <Staff />;

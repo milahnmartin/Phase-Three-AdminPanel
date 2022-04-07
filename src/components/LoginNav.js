@@ -67,7 +67,7 @@ const Navbar = (props) => {
                             display: { xs: "none", md: "flex" },
                         }}
                     >
-                        Phase Three Admin Login
+                        {props.title}
                     </Typography>
 
                     <Box

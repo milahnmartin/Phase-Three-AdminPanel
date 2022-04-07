@@ -76,7 +76,7 @@ export default function Login() {
 
     return (
         <div className='login-container'>
-            <LoginNav />
+            <LoginNav title='Phase Three Trading Profile' />
             <div className='phase-login-container'>
                 <div className='admin-auth'>
                     <TextField
