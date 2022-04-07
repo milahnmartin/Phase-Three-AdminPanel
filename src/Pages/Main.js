@@ -48,7 +48,8 @@ function Main() {
                 return <Profile />;
 
             default:
-                return <Staff />;
+                console.log("DEFAULT HIT");
+                break;
         }
     };
 
