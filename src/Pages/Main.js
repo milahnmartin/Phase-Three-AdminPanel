@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import Staff from "../components/Staff";
-import Client from "../components/Client";
-import Status from "../components/Status";
-import Profile from "../components/Profile";
+import Staff from "../page-components/Staff";
+import Client from "../page-components/Client";
+import Status from "../page-components/Status";
+import Profile from "../page-components/Profile";
 import { auth } from "../firebase-config";
 import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";

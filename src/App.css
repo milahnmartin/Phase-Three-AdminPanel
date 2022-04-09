@@ -48,3 +48,31 @@
 .input {
     color: "primary.main" !important;
 }
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: "primary.main";
+    align-items: center;
+    flex-direction: row;
+    padding: 5px;
+    height: 87vh;
+}
+.box1 {
+    margin-right: 3px;
+    flex-basis: 50%;
+}
+
+.box2 {
+    margin-left: 3px;
+    flex-basis: 50%;
+}
+
+.main-container .box {
+    padding: 5px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background-color: rgba(43, 90, 160, 0.784);
+}

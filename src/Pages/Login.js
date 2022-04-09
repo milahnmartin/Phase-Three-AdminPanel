@@ -4,9 +4,18 @@ import LoginNav from "../components/LoginNav";
 import TextField from "@mui/material/TextField";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { Button, Box, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { auth } from "../firebase-config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+
+const useStyles = makeStyles({
+    input: {
+        color: "red",
+        backgroundColor: "white",
+       
+    },
+});
 
 export default function Login() {
     const [input, setInput] = useState({});
@@ -14,6 +23,7 @@ export default function Login() {
     const [error, setError] = useState("primary");
     const [btn_val, setbtn_val] = useState("Sign In");
     const navigate = useNavigate();
+    const classes = useStyles();
 
     const handleInput = (e) => {
         const { id, value } = e.target;
@@ -83,10 +93,12 @@ export default function Login() {
             <div className='phase-login-container'>
                 <div className='admin-auth'>
                     <TextField
+                        inputProps={{
+                            className: classes.input,
+                        }}
                         sx={{
                             marginBottom: "20px",
                         }}
-                        className='input'
                         id='username'
                         label='Username'
                         variant='filled'
@@ -97,7 +109,9 @@ export default function Login() {
                             marginTop: "20px",
                             marginBottom: "45px",
                         }}
-                        className='input'
+                        inputProps={{
+                            className: classes.input,
+                        }}
                         id='password'
                         label='Password'
                         variant='filled'
