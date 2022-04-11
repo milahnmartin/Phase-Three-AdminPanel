@@ -4,3 +4,10 @@ export const SetView = (new_view) => {
         payload: new_view,
     };
 };
+
+export const SetQuery = (username) => {
+    return {
+        type: "SET_QUERY",
+        payload: username,
+    };
+};

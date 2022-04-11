@@ -2,8 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import Data from "../components/Data";
 import "../App.css";
+
 function Status() {
     const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        document.title = "Phase Three Trading - Status";
+    }, []);
+
     return (
         <div className='main-container'>
             <Box className='box1 box' sx={{}}>
