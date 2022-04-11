@@ -51,28 +51,69 @@
 
 .main-container {
     display: flex;
-    justify-content: space-between;
     background-color: "primary.main";
-    align-items: center;
     flex-direction: row;
     padding: 5px;
     height: 87vh;
 }
 .box1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     margin-right: 3px;
     flex-basis: 50%;
+    justify-content: center;
+    align-items: center;
 }
 
 .box2 {
-    margin-left: 3px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 3px;
     flex-basis: 50%;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .main-container .box {
+    height: 100%;
     padding: 5px;
-    align-items: flex-start;
+    background-color: rgba(43, 90, 160, 0.784);
+}
+
+.users-container {
+    display: flex;
+    align-items: center;
+    justify-content: cen;
+}
+
+.add-user {
     display: flex;
     justify-content: center;
-    height: 100%;
-    background-color: rgba(43, 90, 160, 0.784);
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+.box2::-webkit-scrollbar {
+    display: none;
+}
+
+.get-user-container {
+    position: absolute;
+    top: 26px;
+    right: 90px;
 }
