@@ -25,14 +25,15 @@ export default function MediaCard(props) {
         <Card
             id={props.id}
             sx={{
-                m: 1,
-                width: "100%",
-                height: 150,
-                minHeight: 120,
+                mt: 2,
+                width: "90%",
+                height: 170,
+                minHeight: 170,
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "#42a5f5",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+                backgroundColor: "#90caf9",
                 color: "white",
             }}
         >
@@ -40,25 +41,31 @@ export default function MediaCard(props) {
                 <Typography gutterBottom variant='h5' component='div'>
                     {props.username} {props.surname}
                 </Typography>
-                <Typography variant='body2' color='text.secondary'>
+                <Typography variant='body2' color='text.info'>
                     {props.email}
                 </Typography>
-                <Typography variant='body2' color='text.secondary'>
-                    Expiry Date
-                </Typography>
+                {props.expired ? (
+                    <Typography variant='body2' color='text.info'>
+                        Overdue: {Math.abs(props.expired)} Days
+                    </Typography>
+                ) : (
+                    <Typography variant='body2' color='text.info'>
+                        Join Date: {props.sub_details?.start}
+                    </Typography>
+                )}
             </CardContent>
             <CardActions>
                 <Button size='small' variant='contained'>
                     INFO
                 </Button>
                 <Button size='small' variant='contained'>
-                    Learn More
+                    DATES
                 </Button>
                 <Button
                     id={props.id}
                     onClick={handleDelete}
                     size='small'
-                    variant='outlined'
+                    variant='contained'
                     color='error'
                     sx={{
                         ml: 2,

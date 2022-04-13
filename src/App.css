@@ -111,6 +111,9 @@
 .box2::-webkit-scrollbar {
     display: none;
 }
+.search-box::-webkit-scrollbar {
+    display: none;
+}
 
 .get-user-container {
     position: absolute;
