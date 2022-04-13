@@ -13,7 +13,6 @@ const useStyles = makeStyles({
     input: {
         color: "red",
         backgroundColor: "white",
-       
     },
 });
 
@@ -27,7 +26,6 @@ export default function Login() {
 
     const handleInput = (e) => {
         const { id, value } = e.target;
-        console.log(id, value);
         switch (id) {
             case "password":
                 setInput((prevState) => ({
@@ -54,9 +52,8 @@ export default function Login() {
         // const password = document.getElementById("password").value;
 
         if (input.username === null || input.passowrd === null) {
-            console.log(input.name, input.passowrd);
+            console.log("ERR");
         } else {
-            console.log(input);
             try {
                 setLoading(true);
                 await signInWithEmailAndPassword(
@@ -78,14 +75,6 @@ export default function Login() {
             }
         }
     };
-
-    useEffect(() => {
-        if (loading) {
-            console.log("WE ARE LOADING");
-        } else {
-            console.log("NOTHING IS LOADING");
-        }
-    }, [loading]);
 
     return (
         <div className='login-container'>

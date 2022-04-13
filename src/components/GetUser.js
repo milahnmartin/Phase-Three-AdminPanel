@@ -28,7 +28,8 @@ export default function GetUser() {
             const surname = document.getElementById("surname").value;
             const email = document.getElementById("email").value;
             const subscription = document.getElementById("subscription").value;
-
+            const sub_start = document.getElementById("sub-start").value;
+            const sub_end = document.getElementById("sub-end").value;
             set(
                 ref(
                     db,
@@ -38,7 +39,11 @@ export default function GetUser() {
                     username,
                     surname,
                     email,
-                    subscription,
+                    subscription_details: {
+                        type: subscription,
+                        start: sub_start,
+                        end: sub_end,
+                    },
                 }
             );
         } catch (e) {
@@ -94,6 +99,22 @@ export default function GetUser() {
                         margin='dense'
                         id='subscription'
                         label='Subscription Type'
+                        type='text'
+                        fullWidth
+                        variant='standard'
+                    />
+                    <TextField
+                        margin='dense'
+                        id='sub-start'
+                        label='Sub Start Date'
+                        type='text'
+                        fullWidth
+                        variant='standard'
+                    />
+                    <TextField
+                        margin='dense'
+                        id='sub-end'
+                        label='Sub End Date'
                         type='text'
                         fullWidth
                         variant='standard'
